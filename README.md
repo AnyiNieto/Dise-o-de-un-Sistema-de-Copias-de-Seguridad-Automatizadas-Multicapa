@@ -4,35 +4,30 @@
 ## 1. Arquitectura General del Sistema
 
 ---
-+-------------------------------------------------------+
-|                       Nivel 1                         |
-|                                                       |
-|   [ Windows ]    [  MAC  ]    [  Linux ]              |
-+-------------------------------------------------------+
+| Elemento               | Descripción                                            |
+|------------------------|--------------------------------------------------------|
+| **Rol**                | Punto de acceso y creación de datos por parte del usuario. |
+| **Dispositivos**       | PCs de escritorio o portátiles.                        |
+| **Sistemas Operativos**| Windows, macOS, Linux                                  |
+
 
                       ↓
 
-+-------------------------------------------------------+
-|                       Nivel 2                         |
-|                                                       |
-| Servidor / NAS / PC        [ RAID Interna ]           |
-|                           +------------------+        |
-|                           |   Almacenamiento  |        |
-|                           |   Local (RAID)    |        |
-|                           +------------------+        |
-+-------------------------------------------------------+
+| Elemento             | Descripción                                                        |
+|----------------------|--------------------------------------------------------------------|
+| **Rol**              | Almacenamiento centralizado en red local, respaldo con redundancia.|
+| **Dispositivos**     | NAS, PC con Linux Server o Windows Server.                         |
+| **Tecnología clave** | RAID Interno para proteger contra fallos de disco.                 |
+
 
                       ↓
 
-+-------------------------------------------------------+
-|                       Nivel 3                         |
-|                                                       |
-| Servidor / NAS / PC           [ Nube ]                |
-|                              +------------------+     |
-|                              |  Almacenamiento   |     |
-|                              |     en la nube    |     |
-|                              +------------------+     |
-+-------------------------------------------------------+
+| Elemento                  | Descripción                                                                 |
+|---------------------------|-----------------------------------------------------------------------------|
+| **Rol**                   | Respaldo externo y acceso remoto seguro a los datos.                        |
+| **Dispositivos / Servicios** | NAS con sincronización, PCs conectados a la nube, servicios como Google Drive, Dropbox, AWS. |
+| **Tecnología clave**      | Cloud Storage, sincronización automática, backup remoto.                    |
+
 
 
 ---
