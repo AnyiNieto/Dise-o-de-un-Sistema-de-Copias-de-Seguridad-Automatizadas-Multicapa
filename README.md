@@ -3,11 +3,91 @@
 
 ## 1. Arquitectura General del Sistema
 
-- Nivel 1: ______________________________________
-- Nivel 2: ______________________________________
-- Nivel 3: ______________________________________
+```
++-------------------------------------------------------+
+|                       Nivel 1                         |
+|                                                       |
+|   [ Windows ]    [  MAC  ]    [  Linux ]              |
++-------------------------------------------------------+
 
-_(Explica brevemente la función de cada nivel. Puedes añadir un esquema o diagrama ASCII si lo deseas.)_
+                      ↓
+
++-------------------------------------------------------+
+|                       Nivel 2                         |
+|                                                       |
+| Servidor / NAS / PC        [ RAID Interna ]           |
+|                           +------------------+        |
+|                           |  Almacenamiento   |        |
+|                           |   Local (RAID)    |        |
+|                           +------------------+        |
++-------------------------------------------------------+
+
+                      ↓
+
++-------------------------------------------------------+
+|                       Nivel 3                         |
+|                                                       |
+| Servidor / NAS / PC           [ Nube ]                |
+|                              +------------------+     |
+|                              |  Almacenamiento   |     |
+|                              |    en la nube     |     |
+|                              +------------------+     |
++-------------------------------------------------------+
+```
+
+ Nivel 1: Clientes o Estaciones de Trabajo
+Rol:
+
+Este nivel representa los usuarios finales que interactúan con el sistema.
+
+Son quienes crean, editan y acceden a los datos.
+
+Dispositivos típicos:
+
+Computadoras personales (PCs)
+
+Windows
+
+Mac
+
+Linux
+
+
+🔹 Nivel 2: Servidor Local o Almacenamiento Interno
+Rol:
+
+Actúa como un servidor centralizado local para almacenamiento, respaldo o compartición de archivos dentro de una red local.
+
+Maneja RAID interna, lo que ofrece redundancia y protección de datos.
+
+Dispositivos típicos:
+
+NAS (Network Attached Storage)
+
+PC configurado como servidor con:
+
+Linux Server
+
+Windows Server
+
+
+🔹 Nivel 3: Servidor en la Nube o Almacenamiento Externo
+Rol:
+
+Este nivel se encarga del almacenamiento en la nube o del respaldo remoto.
+
+Proporciona acceso a los datos desde fuera de la red local y protección adicional ante desastres.
+
+Dispositivos / Servicios típicos:
+
+Servidor NAS o PC con sincronización hacia:
+
+Servicios en la nube (Google Drive, Dropbox, OneDrive, etc.)
+
+Plataformas de respaldo online
+
+Servidores virtuales en la nube (AWS, Azure, etc.)
+
 
 ---
 
@@ -40,7 +120,7 @@ _(Explica por qué has elegido cada uno.)_
 
 ### b. Tipo de RAID
 - Elegido: RAID 5
-- Justificación: Redundancia de datos, rendimiento mejorado y costo-eficiencia
+- Justificación: Redundancia de datos, rendimiento mejorado y costo-eficiencia, puede soportar la falla de un disco sin pérdida de datos. La paridad distribuida permite reconstruir los datos perdidos en caso de que un disco falle y ofrece un buen rendimiento en lectura y escritura. Aunque no es tan rápido como RAID 0, que se centra exclusivamente en el rendimiento, RAID 5 ofrece una buena combinación de rendimiento y redundancia. 
 
 ### c. Software de gestión
 - Software elegido: Urbackup
