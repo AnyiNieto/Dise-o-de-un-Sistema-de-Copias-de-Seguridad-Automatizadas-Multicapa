@@ -284,9 +284,10 @@ Entornos regulados        (HIPAA, GDPR) Mensual (obligatorio)
 ---
 
 ## 6. Justificación del uso de RAID
-
-- ¿Por qué no sustituye al backup?
-- ¿Qué pasa si solo tenemos RAID?
+🔹 Actividad:
+ Explica por qué el RAID no reemplaza a las copias de seguridad. ¿Qué pasaría si sólo tienes RAID pero no backups?
+ Porque por mucha redundancia que haya en un RAID 1, 10 o etc, necesitas tener backups en otro dispositivo de almacenamiento, por si los discos de los backups se corrompen, o por si te hacen un ransomware.
+ Si solo tienes RAID y te cifran el disco duro, te quedas sin información, en cambio, si tienes backups simplemente lo restauras.
 
 ---
 
