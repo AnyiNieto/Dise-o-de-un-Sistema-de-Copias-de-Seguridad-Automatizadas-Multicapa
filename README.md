@@ -173,10 +173,9 @@ rsync -av /tus/archivos /mnt/backup
 ## 3. Configuración del Nivel 2: Servidor Local Primario
 
 ### a. Tipo de hardware elegido
-- Opción: NAS 
-- Marca/modelo (si aplica): WD My Cloud Home
-- Precio: Entre 240 euros 
-- Sistema operativo: Técnicamente, está basado en Linux
+ - Opción: NAS / Ordenador (elige uno)
+ - Marca/modelo (si aplica): Ordenador Básico de ofimática, o incluso un kit de Xeon
+ - Sistema operativo: TrueNas Core
 
 
 ### b. Tipo de RAID
@@ -185,21 +184,35 @@ rsync -av /tus/archivos /mnt/backup
 
 ### c. Software de gestión
 - Software elegido: Urbackup
-- Función principal: UrBackup es un software para realizar copias de seguridad rápido, seguro y eficaz.
+- Función principal: UrBackup es un sistema Open Source para clientes y servidores que permite realizar copias de seguridad consiguiendo la seguridad de los datos y la restauración en un tiempo mínimo. Se ejecuta a través de Windows o Linux y admite diferentes copias de seguridad en los equipos que tengan instalados su cliente, sin depender del sistema operativo.
+- ¿Por qué este software?: Rápido: El cliente, al mantenerse en la constante observación de cambios en los archivos, agiliza el proceso de las copias de seguridad incrementales.
+
+Copias de seguridad: UrBackup crea una copia de seguridad mientras el sistema se ejecuta o está en uso. A través de Internet. Permite la posibilidad de configurarlo para respaldar a clientes a través de Internet, lo que beneficia a las copias de seguridad de dispositivos móviles.
+
+Espacio eficiente: No duplica archivos, esto quiere decir que si varios clientes contienen los mismos archivos serán guardados solo una vez, por tanto, ocupa el mínimo espacio de almacenamiento.
+
+Interfaz web: UrBackup tiene una interfaz integrada que facilita el estado de los clientes, las actividades actuales y las estadísticas. Además, permite observar las copias de seguridad de archivos, así como, extraer y restaurar los archivos dentro de las mismas.
+
+Notificaciones: Mediante correo electrónico para avisar de que una máquina cliente no está respaldada.
+
+Multiplataforma: El servidor UrBackup se ejecuta en Windows, GNU / Linux, FreeBSD y algunos sistemas operativos NAS basados en Linux. El cliente UrBackup se ejecuta en Windows, FreeBSD y GNU / Linux.
 
 ---
 
-## 4. Configuración del Nivel 3: Servidor Secundario Remoto
+ ## 4. Configuración del Nivel 3: Servidor Secundario Remoto
+ ### a. Tipo de servidor remoto
+ 
+- Opción elegida: NAS remoto / Nube / PC remoto
+ - Justificación: NAS Remoto con VPN, y de software de VPN escojo WireGuard por su seguridad y porque es gratis.
+ 
+ ### b. Seguridad de la sincronización
 
-### a. Tipo de servidor remoto
-- Opción elegida: NAS remoto / Nube / PC remoto  
-- Justificación:
-
-### b. Seguridad de la sincronización
-- ¿Cómo se programa la sincronización?
+ - ¿Cómo se programa la sincronización?
+ Se realiza a través de tareas de sincronización en la nube, que permiten configurar horarios y frecuencias para la transferencia de datos a y desde la nube.
 - ¿Qué cifrado se usa?
-- ¿Se puede activar doble autenticación?
-
+  Para el cifrado, se utiliza ZFS
+ - ¿Se puede activar doble autenticación?
+Sí, TrueNas ofrece un sistema de autenticación 2FA
 ---
 
 ## 5. Automatización del Proceso
@@ -279,8 +292,6 @@ Entornos regulados        (HIPAA, GDPR) Mensual (obligatorio)
 
 ## 7. Resumen de Software Recomendado
 
-## 7. Resumen de Software Recomendado (con UrBackup)
-
 | Función                          | Software Recomendado                      |
 |----------------------------------|-------------------------------------------|
 | **Gestión centralizada**         | **UrBackup**                       |
@@ -298,4 +309,5 @@ Entornos regulados        (HIPAA, GDPR) Mensual (obligatorio)
 - Fuente 4: [[______________________]](https://www.urbackup.org/features.html)
 - Fuente 5: [[______________________]](https://cloud.google.com/discover/what-is-prometheus?hl=es-419)
 - Fuente 6: [[______________________]](https://wiki.archlinux.org/title/Duplicity)
+- Fuente 7: [[[______________________]]](https://genos.es/urbackup-soporte/#:~:text=UrBackup%20es%20un%20software%20para,seguridad%20rápido%2C%20seguro%20y%20eficaz)
 
